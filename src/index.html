@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	@@include('html/_head.html', {
+		"title": "Gericht"
+	})
+	<body>
+
+		<div class="wrapper _home">
+			<!-- Header -->
+			@@include('html/_header.html', {})
+			<!-- Main Page -->
+			<main class="page">
+				<!-- Hero Section -->
+				@@include('html/MainPage/_hero.html', {})
+
+				<!-- About Section -->
+				@@include('html/MainPage/_about.html', {})
+
+				<!-- Book Section -->
+				@@include('html/MainPage/_book.html', {})
+
+				<!-- Menus Section -->
+				@@include('html/MainPage/_menus.html', {})
+
+				<!-- Special Section -->
+				@@include('html/MainPage/_special.html', {})
+
+				<!-- Believe Section -->
+				@@include('html/MainPage/_believe.html', {})
+
+				<!-- Customers Section -->
+				@@include('html/MainPage/_customers.html', {})
+
+				<!-- Video Section -->
+				@@include('html/MainPage/_video.html', {})
+
+				<!-- Laurels Section -->
+				@@include('html/MainPage/_laurels.html', {})
+
+				<!-- Updates Section -->
+				@@include('html/MainPage/_updates.html', {})
+
+				<!-- Gallery Section -->
+				@@include('html/MainPage/_photo.html', {})
+			</main>
+			<!-- Footer -->
+			<!-- @@include('html/_modal.html', {}) -->
+			@@include('html/_footer.html', {})
+		</div>
+
+		@@include('html/_js.html' {})
+		<script>
+			function scrollAnimation() {
+				function onEntry(entry) {
+					entry.forEach(change => {
+						if (change.isIntersecting) {
+							change.target.classList.add('_active');
+
+							change.target.addEventListener('transitionend', animEnd);
+
+							function animEnd(event) {
+								event.target.classList.add('_anim-end');
+								change.target.removeEventListener('transitionend', animEnd);
+							}
+						} else {
+							if (change.target.classList.contains('_anim-hide')) {
+								change.target.classList.remove('_active');
+							}
+						}
+					});
+				}
+				let options = {
+					threshold: [0.5]
+				};
+				let observer = new IntersectionObserver(onEntry, options);
+				let elements = document.querySelectorAll('._anim-items');
+
+				for (let elem of elements) {
+					observer.observe(elem)
+				}
+			}
+			scrollAnimation();
+		</script>
+	</body>
+</html>
+
+
+

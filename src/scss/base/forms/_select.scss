@@ -1,0 +1,80 @@
+.custom-select {
+  position: relative;
+  display: inline-block;
+  // width: rem(200);
+  width: 100%;
+  font-family: $secondFont;
+  font-weight: 600;
+	letter-spacing: 0.04em;
+	text-transform: capitalize;
+	text-align: center;
+
+	color: #aaa;
+  &__selected {
+  	font-family: $secondFont;
+    width: 100%;
+	  padding: rem(16);
+	  text-align: left;
+	  cursor: pointer;
+	  background-color: $darkColor;
+	  border: rem(1) solid #f5efdb;
+	  user-select: none;
+	  position: relative;
+	  font-size: rem(16);
+	  z-index: 51;
+	  &:after {
+		  content: "";
+		  position: absolute;
+		  width: rem(13);
+		  height: rem(8);
+		  background: url('../img/arrow.svg') 0 0 / cover;
+		  right: rem(26);
+		  top: 50%;
+		  transform: translateY(-50%);
+		  pointer-events: none;
+		}
+  }
+  &__options {
+		transform: translate(0, rem(-1));
+	  // padding: rem(5) 0 0 0;
+	  position: absolute;
+	  top: 100%;
+	  left: 0;
+	  width: 100%;
+	  margin: 0;
+	  list-style: none;
+	  border-top: none;
+
+	  overflow-y: hidden;
+	  max-height: 0;
+	  transition: max-height 0.3s ease;
+	  pointer-events: none;
+	  z-index: 50;
+	  &.open {
+	  	border: rem(1) solid #f5efdb;
+		  max-height: rem(184);
+		  pointer-events: auto;
+	  }
+	  &.scrollable {
+		  overflow-y: auto;
+		}
+		li {
+			font-size: rem(16);
+		  padding: rem(16);
+		  cursor: pointer;
+		  background-color: $darkColor;
+		  border-bottom: rem(1) solid #f5efdb;
+		  transition: background 0.2s ease;
+		  @media (any-hover: hover) {
+		  	&:hover {
+				  background-color: $mainColor;
+				}
+		  }
+		}
+	}
+}
+// .custom-select__options.open ~ .custom-select__selected,
+// .custom-select.open .custom-select__selected {
+//   border-bottom-left-radius: 0;
+//   border-bottom-right-radius: 0;
+// }

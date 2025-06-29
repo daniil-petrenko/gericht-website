@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	@@include('html/_head.html', {
+		"title": "Gericht - Services"
+	})
+	<body>
+		<div class="wrapper _services">
+			<!-- Header -->
+			@@include('html/_header.html', {})
+			<!-- Main Page -->
+			<main class="page">
+				<!-- Hero Info Section -->
+				@@include('html/ServicesPage/_hero-info.html', {})
+
+				<!-- Serving Section -->
+				@@include('html/ServicesPage/_serving.html', {})
+
+				<!-- Menus Section -->
+				@@include('html/ServicesPage/_menus.html', {})
+
+				<!-- Book Section -->
+				@@include('html/ServicesPage/_book.html', {})
+
+				<!-- Hours Section -->
+				@@include('html/ServicesPage/_hours.html', {})
+			</main>
+			<!-- Footer -->
+			<!-- @@include('html/_modal.html', {}) -->
+			@@include('html/_footer.html', {})
+		</div>
+
+		@@include('html/_js.html' {})
+	</body>
+</html>

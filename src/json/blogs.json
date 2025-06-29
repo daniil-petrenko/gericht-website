@@ -1,0 +1,22 @@
+{
+	"blogs": [
+		{
+			"id": 3,
+			"date": "06 Mar 2020",
+			"author": "- Andrial M",
+			"title": "How to make your food Photographs look aesthetic",
+			"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat mattis ipsum turpis elit elit scelerisque egestas mus in....",
+			"image": "image3.jpg",
+			"url": "coming.html"
+		},
+		{
+			"id": 4,
+			"date": "17 June 2018",
+			"author": "- Kaityln B",
+			"title": "Co-ordination & Teamwork Tips from a sous chef",
+			"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat mattis ipsum turpis elit elit scelerisque egestas mus in....",
+			"image": "image4.jpg",
+			"url": "coming.html"
+		}
+	]
+}

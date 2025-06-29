@@ -1,0 +1,188 @@
+.page {
+   &__special {
+      @include adaptivValue("padding-top", 152, 40, 1);
+      @include adaptivValue("padding-bottom", 152, 40, 1);
+   }
+}
+
+.special {
+   &__container {
+   }
+   &__header-content {
+      @include adaptivValue("margin-bottom", 64, 30, 1);
+   }
+   &__main {
+   }
+   &__menu {
+   }
+   &__actions {
+      display: flex;
+      justify-content: center;
+   }
+   &__button {
+      transform: translate(0, 50%);
+      opacity: 0;
+      transition:
+         transform 1s ease,
+         opacity 1s ease,
+         background-color 0.3s ease,
+         border-color 0.3s ease;
+   }
+}
+.header-content-special {
+   &__sub-title {
+      transform: translate(0, 50%);
+      opacity: 0;
+      transition: all 1s ease;
+   }
+   &__title {
+      transform: translate(0, 50%);
+      opacity: 0;
+      transition: all 1s ease 0.1s;
+   }
+}
+.menu-special {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   column-gap: rem(20);
+   @media (max-width: $md1) {
+      justify-content: space-evenly;
+   }
+   @media (max-width: $md2) {
+      flex-direction: column;
+      justify-content: start;
+      row-gap: rem(30);
+   }
+   @media (max-width: $md4) {
+      row-gap: rem(20);
+   }
+   @include adaptivValue("margin-bottom", 64, 24, 1);
+   &__column {
+   }
+   &__image {
+      @media (max-width: $md1) {
+         display: none;
+      }
+      img {
+         max-width: 100%;
+      }
+   }
+}
+.column-menu-special {
+   flex: 0 1 rem(412);
+   @media (max-width: $md2) {
+      flex: 1 1 auto;
+      width: 100%;
+   }
+   &__header {
+      @include adaptivValue("margin-bottom", 48, 20, 1);
+   }
+   &__title {
+      font-family: $secondFont;
+      font-weight: 600;
+      @include adaptivValue("font-size", 45, 26, 1);
+      line-height: 130%;
+      letter-spacing: 0.04em;
+      text-transform: capitalize;
+      text-align: center;
+      color: $whiteColor;
+      transform: translate(0, 50%);
+      opacity: 0;
+      transition: all 1s ease 0.2s;
+   }
+   &__content {
+   }
+}
+.content-column-menu {
+   &__item {
+   }
+}
+.item-column-menu {
+   @include adaptivValue("margin-bottom", 40, 16, 1);
+   &__header {
+      display: flex;
+      align-items: center;
+      margin-bottom: rem(8);
+      @media (max-width: $md3) {
+         margin-bottom: rem(6);
+      }
+      @media (max-width: $md4) {
+         margin-bottom: rem(4);
+      }
+   }
+   &__title {
+      font-family: $secondFont;
+      font-weight: 700;
+      font-size: rem(23);
+      line-height: 130%;
+      letter-spacing: 0.04em;
+      text-transform: capitalize;
+      flex: 0 1 rem(224);
+      transform: translate(-50%, 0);
+      opacity: 0;
+      transition: all 1s ease 0.25s;
+      @media (max-width: $md3) {
+         font-size: rem(21);
+      }
+      @media (max-width: $md4) {
+         font-size: rem(18);
+         flex: 0 1 rem(160);
+      }
+   }
+   &__line {
+      width: auto;
+      flex: 0 1 auto;
+      height: rem(1);
+      background: #fafafa;
+      width: 0;
+      transition: all 1s 0.35s;
+   }
+   &__price {
+      font-family: $secondFont;
+      font-weight: 700;
+      font-size: rem(23);
+      line-height: 130%;
+      letter-spacing: 0.04em;
+      text-transform: capitalize;
+      text-align: center;
+      color: $whiteColor;
+      padding-left: rem(32);
+      transform: translate(-30%, 0);
+      opacity: 0;
+      transition: all 1s ease 0.45s;
+      @media (max-width: $md3) {
+         font-size: rem(21);
+      }
+      @media (max-width: $md4) {
+         font-size: rem(18);
+         padding-left: rem(15);
+      }
+   }
+   &__recipe {
+      line-height: 175%;
+      letter-spacing: 0.04em;
+      color: $grayColor;
+      transform: translate(0, 30%);
+      opacity: 0;
+      transition: all 1s ease 0.55s;
+      @media (max-width: $md4) {
+         font-size: rem(15);
+      }
+   }
+}
+
+.header-content-special__sub-title._active,
+.header-content-special__title._active,
+.column-menu-special__title._active,
+.item-column-menu._active .item-column-menu__title,
+.item-column-menu._active .item-column-menu__price,
+.item-column-menu._active .item-column-menu__recipe,
+.special__button._active {
+   transform: translate(0, 0);
+   opacity: 1;
+}
+
+.item-column-menu._active .item-column-menu__line {
+   flex-grow: 1;
+}

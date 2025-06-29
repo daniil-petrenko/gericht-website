@@ -1,0 +1,49 @@
+.spoiler-block {
+  margin: 0 0 rem(30) 0;
+  &__item {
+    margin: 0 0 rem(10) 0;
+  }
+  &__title {
+    width: 100%;
+    text-align: left;
+    background-color: transparent;
+    color: #000;
+    font-size: rem(18);
+    padding: rem(10);
+    position: relative;
+  }
+  &__text {
+    color: #000;
+    line-height: 130%;
+    padding: 0 rem(10) rem(10);
+  }
+}
+
+.spoiler-block._init {
+  .spoiler-block__title {
+    &::before {
+      content: "";
+      width: rem(20);
+      height: rem(1);
+      background-color: #000;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transition: transform 0.3s ease 0s;
+    }
+    &::after {
+      content: "";
+      width: rem(20);
+      height: rem(1);
+      background-color: #000;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transition: transform 0.3s ease 0s;
+      transform: rotate(-90deg);
+    }
+    &._active::after {
+      transform: rotate(0deg);
+    }
+  }
+}

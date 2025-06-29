@@ -1,0 +1,24 @@
+.footer-short {
+   padding: rem(32) 0;
+   @media (max-width: $md3) {
+      padding: rem(28) 0;
+   }
+   @media (max-width: $md4) {
+      padding: rem(24) 0;
+   }
+   &__container {
+   }
+
+   &__content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+
+   &__copy {
+      line-height: 175%;
+      letter-spacing: 0.04em;
+      text-align: center;
+      color: $grayColor;
+   }
+}

@@ -1,0 +1,64 @@
+.page {
+	&__hours {}
+}
+.hours {
+	background: linear-gradient(rgba(12, 12, 12, 0.4), rgba(12, 12, 12, 0.4)), url('../img/ServicesPage/hours/background.png') 0 0/cover no-repeat;
+	@media (max-width: $md3) {
+		background: linear-gradient(rgba(12, 12, 12, 0.4), rgba(12, 12, 12, 0.4)), url('../img/ServicesPage/hours/background.png') 20% 0/cover no-repeat;
+	}
+	&__container {
+		display: flex;
+		align-items: center;
+		min-height: 100vh;
+		position: relative;
+	}
+	&__body {
+		flex: 1 1 auto;
+	}
+	&__content {
+	}
+	&__title {
+		font-family: $secondFont;
+		font-weight: 600;
+		@include adaptivValue('font-size', 128, 60, 1);
+		line-height: 130%;
+		letter-spacing: 0.03em;
+		text-transform: capitalize;
+		text-align: center;
+		margin-bottom: rem(32);
+		opacity: 0;
+		transform: translate(0, 50%);
+		transition: all 1s ease;
+		@media (max-width: $md3) {
+			margin-bottom: rem(26);
+		}
+		@media (max-width: $md4) {
+			margin-bottom: rem(18);
+		}
+	}
+	&__info {
+		font-family: $secondFont;
+		font-weight: 700;
+		font-size: rem(32);
+		line-height: 130%;
+		letter-spacing: 0.04em;
+		text-transform: capitalize;
+		color: $whiteColor;
+		text-align: center;
+		opacity: 0;
+		transform: translate(0, 50%);
+		transition: all 1s ease 0.15s;
+		@media (max-width: $md3) {
+			font-size: rem(28);
+		}
+		@media (max-width: $md4) {
+			font-size: rem(20);
+		}
+	}
+}
+
+.hours__title._active,
+.hours__info._active {
+	opacity: 1;
+	transform: translate(0, 0);
+}

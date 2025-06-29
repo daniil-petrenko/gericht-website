@@ -1,0 +1,56 @@
+.page {
+	&__video {}
+}
+.video {
+	&__image {
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 100vw;
+		height: 100%;
+      @media (max-width: $md3) {
+         height: rem(250);
+      }
+		&::before {
+			content: "";
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: #0c0c0c;
+			opacity: 0.4;
+			z-index: 3;
+		}
+		img {
+			width: 100%;
+			height: 100%;
+			max-width: 100%;
+			object-fit: cover;
+			position: relative;
+			z-index: 2;
+		}
+	}
+	&__container {
+		position: relative;
+		max-width: rem(1680);
+	}
+	&__decor {
+		position: absolute;
+		top: percent(147, 763);
+		left: percent(77, 1330);
+		@media (max-width: $md1) {
+			max-width: rem(120);
+		}
+		@media (max-width: $md3) {
+			max-width: rem(80);
+		}
+		@media (max-width: $md4) {
+			max-width: rem(60);
+		}
+	}
+}
+.delight-decor {
+	&__main-image {}
+	&__rotate-image {}
+}

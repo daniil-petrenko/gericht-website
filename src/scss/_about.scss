@@ -1,0 +1,182 @@
+.page {
+	&__about {}
+}
+
+.about {
+	background: url('../img/MainPage/about/background.png') 0 0/cover no-repeat;
+	&__container {
+		display: flex;
+		align-items: center;
+		@include adaptivValue('gap', 85, 0, 1);
+		@include adaptivValue('padding-top', 120, 50, 1);
+		@include adaptivValue('padding-bottom', 136, 50, 1);
+		position: relative;
+		@media (max-width: $md3) {
+			flex-direction: column;
+			gap: rem(30);
+		}
+	}
+	&__content-reverse {
+		flex: 1 1 auto;
+	}
+	&__image {
+		flex: 0 0 6.38%;
+		position: relative;
+		z-index: 2;
+		opacity: 0;
+		transform: translate(0, 30%);
+		transition: all 1s ease;
+		@media (max-width: $md3) {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -20%);
+			flex: 1 1 auto;
+		}
+		img {
+			max-width: 100%;
+			@media (max-width: $md3) {
+				max-width: 85%;
+				opacity: 0.5;
+			}
+		}
+	}
+	&__content {
+		flex: 1 1 auto;
+	}
+	&__decor-letter {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 1;
+		svg {
+			max-width: 100%;
+		}
+	}
+}
+.content-about-reverse {
+	position: relative;
+	z-index: 3;
+	&__title {
+		opacity: 0;
+		transform: translate(10%, 0);
+		transition: all 1s ease 0.4s;
+	}
+	&__icon {
+		opacity: 0;
+		transform: rotate(180deg) translate(10%, 0);
+		transition: all 1s ease 0.5s;
+	}
+	&__text {
+		max-width: rem(523);
+		opacity: 0;
+		transform: translate(10%, 0);
+		transition: all 1s ease 0.6s;
+		@media (max-width: $md3) {
+			max-width: none;
+		}
+	}
+	&__actions {}
+	&__button {
+		opacity: 0;
+		transform: translate(10%, 0);
+		transition:
+         transform 1s ease,
+         opacity 1s ease,
+         background-color 0.3s ease 0s,
+         border-color 0.3s ease 0s;
+	}
+}
+.content-about {
+	position: relative;
+	z-index: 3;
+	&__title {
+		margin-bottom: rem(8);
+		opacity: 0;
+		transform: translate(-10%, 0);
+		transition: all 1s ease 0.4s;
+	}
+	&__icon {
+		opacity: 0;
+		transform: translate(-10%, 0);
+		transition: all 1s ease 0.5s;
+	}
+	&__text {
+		max-width: rem(523);
+		opacity: 0;
+		transform: translate(-10%, 0);
+		transition: all 1s ease 0.6s;
+		@media (max-width: $md3) {
+			max-width: none;
+		}
+	}
+	&__actions {}
+	&__button {
+		opacity: 0;
+		transform: translate(-10%, 0);
+      transition:
+         transform 1s ease,
+         opacity 1s ease,
+         background-color 0.3s ease 0s,
+         border-color 0.3s ease 0s;
+	}
+}
+
+.content-about-reverse__title._active,
+.content-about-reverse__text._active,
+.content-about__title._active,
+.content-about__icon._active,
+.content-about__text._active{
+	opacity: 1;
+	transform: translate(0, 0);
+}
+.content-about-reverse__icon._active {
+	opacity: 1;
+	transform: rotate(180deg) translate(0, 0);
+}
+.about._active .about__image {
+	opacity: 1;
+	transform: translate(0, 0);
+	@media (max-width: $md3) {
+		transform: translate(-50%, -50%);
+	}
+}
+
+.content-about-reverse__actions._active {
+	& .content-about-reverse__button:nth-child(1) {
+      transition:
+         transform 1s ease 0.75s,
+         opacity 1s ease 0.75s,
+         background-color 0.3s ease 0s,
+         border-color 0.3s ease 0s;
+	}
+	& .content-about-reverse__button:nth-child(2) {
+      transition:
+         transform 1s ease 0.85s,
+         opacity 1s ease 0.85s,
+         background-color 0.3s ease 0s,
+         border-color 0.3s ease 0s;
+	}
+}
+.content-about__actions._active {
+	& .content-about__button:nth-child(1) {
+		transition:
+         transform 1s ease 0.75s,
+         opacity 1s ease 0.75s,
+         background-color 0.3s ease 0s,
+         border-color 0.3s ease 0s;
+	}
+	& .content-about__button:nth-child(2) {
+		transition:
+         transform 1s ease 0.8 5s,
+         opacity 1s ease 0.85s,
+         background-color 0.3s ease 0s,
+         border-color 0.3s ease 0s;
+	}
+}
+.content-about-reverse__actions._active .content-about-reverse__button,
+.content-about__actions._active .content-about__button {
+	transform: translate(0, 0);
+	opacity: 1;
+}

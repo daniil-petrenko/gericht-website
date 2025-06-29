@@ -1,0 +1,73 @@
+.custom-select {
+  position: relative;
+  display: inline-block;
+  width: rem(200);
+  font-family: sans-serif;
+  &__selected {
+    width: 100%;
+	  padding: rem(8) rem(12);
+	  text-align: left;
+	  cursor: pointer;
+	  background-color: white;
+	  border: rem(1) solid #ccc;
+	  border-radius: rem(4);
+	  user-select: none;
+	  transition: border-radius 0.2s ease;
+	  position: relative;
+	  z-index: 11;
+	  &::after {
+		  content: "▼";
+		  position: absolute;
+		  right: rem(12);
+		  top: 50%;
+		  transform: translateY(-50%);
+		  pointer-events: none;
+		  font-size: rem(12);
+		  color: #666;
+		}
+  }
+  &__options {
+		transform: translate(0, rem(-5));
+	  padding: rem(5) 0 0 0;
+	  position: absolute;
+	  top: 100%;
+	  left: 0;
+	  width: 100%;
+	  margin: 0;
+	  list-style: none;
+	  background-color: white;
+	  border-top: none;
+	  border-bottom-left-radius: rem(4);
+	  border-bottom-right-radius: rem(4);
+	  box-shadow: 0 rem(8) rem(16) rgba(0,0,0,0.1);
+	  overflow-y: hidden;
+	  max-height: 0;
+	  transition: max-height 0.3s ease;
+	  pointer-events: none;
+	  z-index: 10;
+	  &.open {
+	  	border: rem(1) solid #ccc;
+		  max-height: rem(300);
+		  pointer-events: auto;
+	  }
+	  &.scrollable {
+		  overflow-y: auto;
+		}
+		li {
+		  padding: rem(8) rem(12);
+		  cursor: pointer;
+		  background: white;
+		  transition: background 0.2s ease;
+		  @media (any-hover: hover) {
+		  	&:hover {
+				  background: #f0f0f0;
+				}
+		  }
+		}
+	}
+}
+.custom-select__options.open ~ .custom-select__selected,
+.custom-select.open .custom-select__selected {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}

@@ -1,0 +1,136 @@
+.page {
+	&__customers {
+		@include adaptivValue('padding-top', 152, 50, 1);
+		@include adaptivValue('padding-bottom', 172, 60, 1);
+	}
+}
+.customers {
+	&__container {
+		position: relative;
+	}
+	&__content {}
+	&__main {}
+	&__decor {
+		top: rem(-202);
+		right: percent(-23, 1330);
+		@media (max-width: $md1) {
+			right: percent(23, 1330);
+		}
+		@media (max-width: $md2) {
+			top: rem(-170);
+		}
+		@media (max-width: $md3) {
+			max-width: rem(110);
+			top: rem(-130);
+		}
+		@media (max-width: $md4) {
+			max-width: rem(100);
+			top: rem(-78);
+		}
+	}
+}
+.content-customers {
+	@include adaptivValue('margin-bottom', 64, 28, 1);
+	&__sub-title {
+		transform: translate(0, 50%);
+		opacity: 0;
+		transition: all 1s ease;
+	}
+	&__icon {}
+	&__title {
+		transform: translate(0, 50%);
+		opacity: 0;
+		transition: all 1s ease 0.1s;
+	}
+}
+.main-customers {
+	&__row {
+		display: flex;
+		@include adaptivValue('column-gap', 32, 20, 1);
+		@include adaptivValue('margin-bottom', 82, 40, 1);
+		@media (max-width: $md2) {
+			flex-wrap: wrap;
+			justify-content: center;
+			@include adaptivValue('row-gap', 82, 40, 1);
+		}
+	}
+	&__item {}
+}
+.item-customers {
+	display: flex;
+	align-items: flex-start;
+	flex: 0 1 50%;
+	@include adaptivValue('gap', 39, 0, 1);
+	@media (max-width: $md2) {
+		@include adaptivValue('gap', 39, 20, 1);
+		flex: 1 1 auto;
+	}
+	@media (max-width: $md4) {
+		flex-direction: column-reverse;
+		row-gap: rem(16);
+	}
+	&__image-block {
+		position: relative;
+		flex: 0 1 percent(190, 641);
+		@media (max-width: $md4) {
+			align-self: center;
+		}
+	}
+	&__image {
+		img {
+			width: 100%;
+			height: 100%;
+			max-width: 100%;
+		}
+	}
+	&__image-decor {
+		position: absolute;
+		right: percent(-23, 190);
+		bottom: percent(-20, 190);
+	}
+	&__content {
+		flex: 0 1 percent(412, 641);
+		padding-top: rem(18);
+	}
+	&__text {
+		font-style: italic;
+		line-height: 175%;
+		letter-spacing: 0.04em;
+		color: $grayColor;
+		margin-bottom: rem(16);
+		transform: translate(0, 30%);
+		opacity: 0;
+		transition: all 1s ease 0.2s;
+		@media (max-width: $md3) {
+			margin-bottom: rem(10);
+		}
+	}
+	&__title {
+		font-family: $secondFont;
+		@include adaptivValue('font-size', 32, 18, 1);
+		line-height: 130%;
+		letter-spacing: 0.04em;
+		text-transform: capitalize;
+		margin-bottom: rem(4);
+		transform: translate(0, 50%);
+		opacity: 0;
+		transition: all 1s ease 0.3s;
+	}
+	&__position {
+		line-height: 175%;
+		letter-spacing: 0.04em;
+		color: #f5efdb;
+		transform: translate(0, 50%);
+		opacity: 0;
+		transition: all 1s ease 0.4s;
+	}
+}
+
+.content-customers__sub-title._active,
+.content-customers__title._active,
+.item-customers__text._active,
+.item-customers__title._active,
+.item-customers__position._active {
+	opacity: 1;
+	transform: translate(0, 0);
+}

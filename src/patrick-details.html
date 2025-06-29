@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	@@include('html/_head.html', {
+		"title": "Gericht - Patrick Choi"
+	})
+	<body>
+		<div class="wrapper _chef-details">
+			<!-- Header -->
+			@@include('html/_header.html', {})
+			<!-- Main Page -->
+			<main class="page">
+				<!-- Hero Info Section -->
+				@@include('html/ChefsDetailsPages/patrick/_hero-info.html', {})
+
+				<!-- Chef Details Section -->
+				@@include('html/ChefsDetailsPages/patrick/_chef-details.html', {})
+
+				<!-- Chef Details Section -->
+				@@include('html/ChefsDetailsPages/patrick/_chef-achievements.html', {})
+			</main>
+			<!-- Footer -->
+			<!-- @@include('html/_modal.html', {}) -->
+			@@include('html/_footer.html', {})
+		</div>
+
+		@@include('html/_js.html' {})
+	</body>
+</html>

@@ -1,0 +1,174 @@
+.page {
+   &__updates {
+      @include adaptivValue("padding-top", 152, 40, 1);
+      @include adaptivValue("padding-bottom", 152, 40, 1);
+   }
+}
+.updates {
+   &__container {
+      position: relative;
+   }
+   &__header-content {
+      @include adaptivValue("margin-bottom", 64, 24, 1);
+   }
+   &__cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(19.0625rem, 100%), 1fr));
+      column-gap: rem(32);
+      row-gap: rem(30);
+      @media (max-width: $md3) {
+         column-gap: rem(20);
+      }
+      @include adaptivValue("margin-bottom", 64, 24, 1);
+   }
+   &__card {
+   }
+   &__actions {
+      display: flex;
+      justify-content: center;
+   }
+   &__load {
+      opacity: 0;
+      transform: translate(0, 40%);
+      transition: transform 1s ease, opacity 1s ease, color 0.3s ease, background-color 0.3s ease;
+   }
+   &__decor {
+      right: rem(-218);
+      bottom: rem(-28);
+      @media (max-width: em(1699.98)) {
+         right: rem(-90);
+      }
+      @media (max-width: $md1) {
+         right: 5%;
+         bottom: 10%;
+      }
+      @media (max-width: $md3) {
+         right: -7%;
+         bottom: -2%;
+         max-width: rem(110);
+      }
+      @media (max-width: $md4) {
+         right: -10%;
+         bottom: -2%;
+      }
+   }
+}
+.header-updates {
+   &__sub-title {
+      opacity: 0;
+      transform: translate(0, 50%);
+      transition: all 1s ease;
+   }
+   &__title {
+      opacity: 0;
+      transform: translate(0, 50%);
+      transition: all 1s ease 0.1s;
+   }
+}
+.card-updates {
+   opacity: 0;
+   transform: translate(0, 5%);
+   transition: all 1s ease;
+   &__image {
+      display: inline-block;
+      border: rem(1) solid rgba(220, 202, 135, 0.2);
+      width: 100%;
+      overflow: hidden;
+      &:not(:last-child) {
+         @include adaptivValue("margin-bottom", 24, 10, 1);
+      }
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+         aspect-ratio: 412/430;
+         transition: transform 0.3s ease;
+         @media (any-hover: hover) {
+            &:hover {
+               transform: scale(1.1);
+            }
+         }
+      }
+   }
+   &__info {
+      display: flex;
+      justify-content: space-between;
+      &:not(:last-child) {
+         @include adaptivValue("margin-bottom", 32, 18, 1);
+      }
+   }
+   &__date {
+      line-height: 175%;
+      letter-spacing: 0.04em;
+      color: #fafafa;
+      @media (max-width: $md4) {
+         font-size: rem(15);
+      }
+   }
+   &__author {
+      line-height: 175%;
+      letter-spacing: 0.04em;
+      color: #fafafa;
+      @media (max-width: $md4) {
+         font-size: rem(15);
+      }
+      a {
+         color: inherit;
+         transition: color 0.3s ease;
+         @media (any-hover: hover) {
+            &:hover {
+               color: $mainColor;
+            }
+         }
+      }
+   }
+   &__title {
+      font-family: $secondFont;
+      @include adaptivValue("font-size", 32, 24, 1);
+      line-height: 130%;
+      letter-spacing: 0.04em;
+      text-transform: capitalize;
+      text-decoration-skip-ink: none;
+      color: $mainColor;
+      a {
+         color: inherit;
+         @media (any-hover: hover) {
+            &:hover {
+               text-decoration: underline;
+            }
+         }
+      }
+      &:not(:last-child) {
+         @include adaptivValue("margin-bottom", 32, 18, 1);
+      }
+   }
+   &__text {
+      line-height: 175%;
+      letter-spacing: 0.04em;
+      color: $grayColor;
+      &:not(:last-child) {
+         @include adaptivValue("margin-bottom", 32, 18, 1);
+      }
+   }
+   &__link {
+      font-family: $secondFont;
+      font-weight: 700;
+      line-height: 175%;
+      letter-spacing: 0.04em;
+      color: $mainColor;
+      transition: color 0.3s ease;
+      @media (any-hover: hover) {
+         &:hover {
+            color: #b8a358;
+         }
+      }
+   }
+}
+
+.header-updates__sub-title._active,
+.header-updates__title._active,
+.card-updates._active,
+.updates__load._active {
+   opacity: 1;
+   transform: translate(0, 0);
+}

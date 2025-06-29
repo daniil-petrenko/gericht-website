@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	@@include('html/_head.html', {
+		"title": "Error 404"
+	})
+	<body>
+		<div class="wrapper _error">
+			<!-- Header -->
+			@@include('html/_header.html', {})
+			<!-- Main Page -->
+			<main class="page">
+				<!-- Error Section -->
+				@@include('html/ErrorPage/_error.html', {})
+			</main>
+			<!-- Footer -->
+			<!-- @@include('html/_modal.html', {}) -->
+			@@include('html/_footer-short.html', {})
+		</div>
+
+		@@include('html/_js.html' {})
+	</body>
+</html>

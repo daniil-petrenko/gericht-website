@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@@include('html/_head.html', {
+"title": "Gericht - Blogs"
+})
+
+<body>
+   <div class="wrapper _blogs">
+      <!-- Header -->
+      @@include('html/_header.html', {})
+      <!-- Main Page -->
+      <main class="page">
+         <!-- Hero Info Section -->
+         @@include('html/BlogPage/_hero-info.html', {})
+
+         <!-- Blogs Section -->
+         @@include('html/BlogPage/_blogs.html', {})
+
+      </main>
+      <!-- Footer -->
+      <!-- @@include('html/_modal.html', {}) -->
+      @@include('html/_footer.html', {})
+   </div>
+
+   @@include('html/_js.html' {})
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	@@include('html/_head.html', {
+		"title": "Gericht - Team"
+	})
+	<body>
+		<div class="wrapper _team">
+			<!-- Header -->
+			@@include('html/_header.html', {})
+			<!-- Main Page -->
+			<main class="page">
+				<!-- Hero Info Section -->
+				@@include('html/TeamPage/_hero-info.html', {})
+
+				<!-- Chefs Section -->
+				@@include('html/TeamPage/_chefs.html', {})
+
+				<!-- Video Section -->
+				@@include('html/TeamPage/_video.html', {})
+
+				<!-- Video Section -->
+				@@include('html/TeamPage/_laurels.html', {})
+			</main>
+			<!-- Footer -->
+			<!-- @@include('html/_modal.html', {}) -->
+			@@include('html/_footer.html', {})
+		</div>
+
+		@@include('html/_js.html' {})
+	</body>
+</html>
