@@ -41,8 +41,8 @@ import scrollAnimation from './modules/scrollAnimation.js';
 // ======================[ Loader ]======================
 // import componentLoader from './modules/loader.js';
 
-import AirDatepicker from 'air-datepicker';
-import localeEn from './modules/locale-en.js';
+// import AirDatepicker from 'air-datepicker';
+// import localeEn from './modules/locale-en.js';
 
 
 // ======================[ Header ]======================
@@ -193,14 +193,14 @@ if (document.querySelector('.slider-gallery__slider')) {
 
 
 // Calendar and Time Picker
-mobiscroll.datepicker('#calendar', {
-   controls: ['calendar']
-});
-mobiscroll.datepicker('#timePicker', {
-   controls: ['time'],
-   timeFormat: 'h:mm A',
-   touchUi: true
-});
+// mobiscroll.datepicker('#calendar', {
+//    controls: ['calendar']
+// });
+// mobiscroll.datepicker('#timePicker', {
+//    controls: ['time'],
+//    timeFormat: 'h:mm A',
+//    touchUi: true
+// });
 
 
 // Coming Soon Timer
