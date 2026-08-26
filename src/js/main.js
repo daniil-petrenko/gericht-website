@@ -1,5 +1,7 @@
 'use strict'
 
+import Swiper from 'swiper';
+
 // ======================[ Header ]======================
 import { componentHeader } from './modules/header.js';
 import { componentHeaderScroll } from './modules/header.js';
@@ -43,7 +45,6 @@ import scrollAnimation from './modules/scrollAnimation.js';
 
 import AirDatepicker from 'air-datepicker';
 import localeEn from './modules/locale-en.js';
-
 
 // ======================[ Header ]======================
 componentHeader()
