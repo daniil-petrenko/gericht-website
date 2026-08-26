@@ -190,19 +190,6 @@ if (document.querySelector('.slider-gallery__slider')) {
    });
 }
 
-
-
-// Calendar and Time Picker
-// mobiscroll.datepicker('#calendar', {
-//    controls: ['calendar']
-// });
-// mobiscroll.datepicker('#timePicker', {
-//    controls: ['time'],
-//    timeFormat: 'h:mm A',
-//    touchUi: true
-// });
-
-
 // Coming Soon Timer
 function startCountdown(timerElement) {
    const timeParts = timerElement.getAttribute("data-timer").split("-").map(Number);
